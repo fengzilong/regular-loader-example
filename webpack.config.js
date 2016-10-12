@@ -30,7 +30,7 @@ module.exports = {
 		]
 	},
 	resolve: {
-		extensions: [ '', '.js', '.rgl', '.png' ]
+		extensions: [ '', '.js', '.rgl' ]
 	},
 	regular: {
 		loaders: {
