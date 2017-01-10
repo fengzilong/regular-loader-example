@@ -1,3 +1,3 @@
-import App from './app';
+import App from './components/App';
 
 new App().$inject( document.getElementById( 'app' ) );

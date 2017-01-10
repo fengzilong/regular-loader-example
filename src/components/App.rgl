@@ -1,13 +1,13 @@
 <template>
 	<div class="wrapper">
-		<img src="./logo.png" alt="logo">
+		<img src="../logo.png" alt="logo">
 		Regularjs is awesome
 		<Button on-clicked="{ this.onGetStarted() }">Get Started</Button>
 	</div>
 </template>
 
 <script>
-	import Button from './button';
+	import Button from './Button';
 
 	export default {
 		components: {

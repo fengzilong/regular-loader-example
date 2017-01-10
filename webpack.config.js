@@ -1,14 +1,23 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var cwd = process.cwd();
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require( 'path' );
+
+const _ = {
+	cwd: function ( p ) {
+		const cwd = process.cwd();
+		return path.resolve( cwd, p );
+	},
+	dir: function () {
+		return path.resolve( __dirname, p );
+	},
+};
 
 module.exports = {
-	entry: './index.js',
-	cwd: cwd,
+	entry: _.cwd( 'src/index.js' ),
 	devtool: 'source-map',
 	output: {
-		path: './dist',
-		filename: 'app.js',
-		publicPath: './dist/'
+		path: 'dist',
+		filename: 'app-[chunkhash:8].js',
 	},
 	module: {
 		loaders: [
@@ -38,10 +47,11 @@ module.exports = {
 			less: ExtractTextPlugin.extract( 'css!less' )
 		}
 	},
-	externals: {
-		'regularjs': 'Regular'
-	},
 	plugins: [
-		new ExtractTextPlugin( 'app.css' )
+		new ExtractTextPlugin( 'app-[contenthash:8].css' ),
+		new HtmlWebpackPlugin( {
+			template: _.cwd( 'src/index.html' ),
+			filename: _.cwd( 'dist/index.html' ),
+		} ),
 	]
 };
