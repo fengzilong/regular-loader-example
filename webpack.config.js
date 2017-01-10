@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
+const FriendlyErrorsWebpackPlugin = require( 'friendly-errors-webpack-plugin' );
 const path = require( 'path' );
 
 const _ = {
@@ -53,5 +54,6 @@ module.exports = {
 			template: _.cwd( 'src/index.html' ),
 			filename: _.cwd( 'dist/index.html' ),
 		} ),
+		new FriendlyErrorsWebpackPlugin(),
 	]
 };

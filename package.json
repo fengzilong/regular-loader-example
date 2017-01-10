@@ -1,9 +1,10 @@
 {
   "name": "regular-loader-example",
   "version": "0.0.0",
-  "description": "",
+  "description": "regular-loader-example",
   "scripts": {
-    "dist": "webpack"
+    "dist": "webpack",
+    "dev": "webpack -w"
   },
   "author": "fengzilong",
   "license": "MIT",
@@ -15,6 +16,7 @@
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "friendly-errors-webpack-plugin": "^1.1.2",
     "html-webpack-plugin": "^2.26.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
